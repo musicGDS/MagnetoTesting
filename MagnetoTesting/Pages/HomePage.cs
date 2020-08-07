@@ -11,57 +11,47 @@ using OpenQA.Selenium.Support.UI;
 // For supporting Page Object Model
 // Obsolete - using OpenQA.Selenium.Support.PageObjects;
 using SeleniumExtras.PageObjects;
+using MagnetoTesting.Infrastructure;
 
 namespace MagnetoTesting
 {
-    public class HomePage
+    public class HomePage : PageBase
     {
         private string homepageURL = "http://dovydenas.lt/sandboxthree/";
-        private IWebDriver driver;
         private WebDriverWait wait;
 
-        public HomePage(IWebDriver driver)
+        public HomePage(IWebDriver driver) : base(driver)
         {
-            this.driver = driver;
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(1));
-            PageFactory.InitElements(driver, this);
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
         }
 
         //Page elements
 
         //Header
 
-        [FindsBy(How = How.XPath, Using = "//a[@class='logo']//img")]
-        private IWebElement elem_logo;
+        private By elem_logo = By.XPath("//a[@class='logo']//img");
 
         //Search
 
-        [FindsBy(How = How.XPath, Using = "//input[@id='search']")]
-        private IWebElement elem_searchInput;
+        private By elem_searchInput = By.XPath("//input[@id='search']");
 
-        [FindsBy(How = How.XPath, Using = "//input[@id='search']")]
-        private IWebElement elem_searchButton;
+        private By elem_searchButton = By.XPath("//input[@id='search']");
 
         //User menu
 
-        [FindsBy(How = How.ClassName, Using = "welcome-msg")]
-        private IWebElement elem_welcomeMessage;
+        private By elem_welcomeMessage = By.ClassName("welcome-msg");
 
-        [FindsBy(How = How.LinkText, Using = "My Account")]
-        private IWebElement elem_buttonMyAccount;
+        private By elem_buttonMyAccount = By.LinkText("My Account");
 
-        [FindsBy(How = How.LinkText, Using = "My Wishlist")]
-        private IWebElement elem_buttonMyWishlist;
+        private By elem_buttonMyWishlist = By.LinkText("My Wishlist");
 
-        [FindsBy(How = How.XPath, Using = "//a[@class='top-link-cart']")]
-        private IWebElement elem_buttonMyCart;
+        private By elem_buttonMyCart = By.XPath("//a[@class='top-link-cart']");
 
-        [FindsBy(How = How.LinkText, Using = "Checkout")]
-        private IWebElement elem_buttonCheckout;
+        private By elem_buttonCheckout = By.XPath("Checkout");
 
-        [FindsBy(How = How.LinkText, Using = "Log In")]
-        private IWebElement elem_buttonLogIn;
+        private By elem_buttonLogIn = By.LinkText("Log In");
 
+        
         //Compare Products
 
         [FindsBy(How = How.XPath, Using = "//div[@class='block-title']//strong//span//small")]
@@ -96,38 +86,37 @@ namespace MagnetoTesting
 
         public void pressHomeLogo()
         {
-            elem_searchInput.Click();
+            Click(elem_searchInput);
         }
 
         //Methods
 
         public void GoToGomepage()
         {
-            driver.Navigate().GoToUrl(homepageURL);
+            Driver.Navigate().GoToUrl(homepageURL);
         }
         //Search bar Methods
 
         public void InputSearchText(string userInput)
         {
-            elem_searchInput.SendKeys(userInput);
+            SendKeys(elem_searchInput, userInput);
         }
 
         public void PressSearch()
         {
-            elem_searchButton.Click();
+            Click(elem_searchButton);
         }
 
         //User Account links methods
 
         public string WelcomeMessage()
         {
-            return elem_welcomeMessage.Text;
+            return Text(elem_welcomeMessage);
         }
 
-        public MyAccount GoToMyAccount()
+        public void GoToMyAccount()
         {
-            elem_buttonMyAccount.Click();
-            return new MyAccount(driver);
+            Click(elem_buttonMyAccount);
         }
 
         //My Wishlist
@@ -136,10 +125,10 @@ namespace MagnetoTesting
 
         //Checkout
 
-        public LogIn GoToLogin()
+        public void GoToLogin()
         {
-            elem_buttonLogIn.Click();
-            return new LogIn(driver);
+            Click(elem_buttonLogIn);
+            
         }
     }
 }
