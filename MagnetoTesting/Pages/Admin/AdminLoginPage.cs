@@ -13,7 +13,7 @@ namespace MagnetoTesting
         private IWebDriver driver;
         private WebDriverWait wait;
 
-        public AdminLoginPage(driver) : base(driver)
+        public AdminLoginPage(IWebDriver driver) : base(driver)
         {
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
         }
@@ -21,6 +21,8 @@ namespace MagnetoTesting
         private By elem_userNameInput = By.XPath("//input[@id='username']");
 
         private By elem_passwordInput = By.XPath("//input[@id='login']");
+
+        private By elem_forgotPassword = By.XPath("//a[@class='left']");
 
         private By elem_logInButton = By.XPath("//input[@class='form-button']");
 
@@ -44,7 +46,17 @@ namespace MagnetoTesting
             Click(elem_logInButton);
         }
 
-        //parasyti viena metoda loginui
+        public void ClickForgotPassword()
+        {
+            Click(elem_forgotPassword);
+        }
+
+        public void LogIn(string userName, string password)
+        {
+            InputUsername(userName);
+            InputPassword(password);
+            ClickLogin();
+        }
 
     }
 }

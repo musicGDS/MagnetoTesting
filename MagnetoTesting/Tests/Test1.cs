@@ -18,7 +18,6 @@ namespace MagnetoTesting
             _homePage = new HomePage(Driver);
             _logInPage = new LogInPage(Driver);
             _myAccountPage = new MyAccountPage(Driver);
-
         }
 
         [Test]
@@ -28,21 +27,24 @@ namespace MagnetoTesting
             string userPassword = "tester1testing";
             string expectedPageTitle = "My Account";
             
-            _homePage.GoToGomepage();
+            _homePage.GoToHomepage();
             _homePage.GoToLogin();
 
             _logInPage.InputEmail(userEmail);
             _logInPage.InputPassword(userPassword);
             _logInPage.ClickLogIn();
 
-            // Kodel kai bandziau surasti page title per Home page viena is metodu mete klaida?
-            //Taippat bandziau is dashboard'o pasiimti welcome message "My Account" irgi tas pats
+            //string actualTitle = Driver.Title;
 
-            Assert.That(expectedPageTitle == Driver.Title);
+            string actualTitle = _myAccountPage.GetPageTitle();
 
             //Pokol aiskinuosi kur padeti driver close
-            Driver.Close();
+            //Driver.Close();
 
+
+            //Taippat bandziau is dashboard'o pasiimti welcome message "My Account" irgi tas pats
+
+            Assert.That(expectedPageTitle == actualTitle);
         }
     }
 }

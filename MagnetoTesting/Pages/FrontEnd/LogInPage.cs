@@ -54,5 +54,12 @@ namespace MagnetoTesting
             Click(elem_ButtonLogin);
         }
 
+        public void LogIn(string email, string password)
+        {
+            InputEmail(email);
+            InputPassword(password);
+            ClickLogIn();
+        }
+
     }
 }

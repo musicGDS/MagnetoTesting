@@ -1,15 +1,6 @@
 ﻿using System;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Remote;
-using NUnit.Framework;
-using System.Threading;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using OpenQA.Selenium.Support.UI;
-// For supporting Page Object Model
-// Obsolete - using OpenQA.Selenium.Support.PageObjects;
 using SeleniumExtras.PageObjects;
 using MagnetoTesting.Infrastructure;
 
@@ -51,7 +42,7 @@ namespace MagnetoTesting
 
         private By elem_buttonLogIn = By.LinkText("Log In");
 
-        
+
         //Compare Products
 
         [FindsBy(How = How.XPath, Using = "//div[@class='block-title']//strong//span//small")]
@@ -84,17 +75,18 @@ namespace MagnetoTesting
         [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Checkout')]")]
         private IWebElement elem_myCartProductsList;
 
-        public void pressHomeLogo()
-        {
-            Click(elem_searchInput);
-        }
-
         //Methods
 
-        public void GoToGomepage()
+        public void pressHomeLogo()
+        {
+            Click(elem_logo);
+        }
+
+        public void GoToHomepage()
         {
             Driver.Navigate().GoToUrl(homepageURL);
         }
+
         //Search bar Methods
 
         public void InputSearchText(string userInput)
@@ -119,7 +111,11 @@ namespace MagnetoTesting
             Click(elem_buttonMyAccount);
         }
 
-        //My Wishlist
+        public void GoToMyWishlist()
+        {
+            Click(elem_buttonMyWishlist);
+        }
+
 
         //My Cart
 

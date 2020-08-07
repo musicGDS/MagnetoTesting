@@ -21,6 +21,7 @@ namespace MagnetoTesting
 
         //Methods
 
+        //Pasiaiskint, kodel nesuveike
         public string GetWelcomeMessage()
         {
             return Text(elem_welcomeMessage);

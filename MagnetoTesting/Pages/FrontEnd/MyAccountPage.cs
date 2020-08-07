@@ -22,7 +22,7 @@ namespace MagnetoTesting
 
         public string GetPageTitle()
         {
-            return driver.Title;
+            return Driver.Title;
         }
     }
 }
