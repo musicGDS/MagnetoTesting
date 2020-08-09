@@ -12,7 +12,7 @@ namespace MagnetoTesting
 
         public AccountDashboardPage(IWebDriver driver) : base(driver)
         {
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            //wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
         }
 
         //Elements

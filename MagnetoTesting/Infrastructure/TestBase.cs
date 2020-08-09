@@ -13,8 +13,8 @@ namespace MagnetoTesting.Infrastructure
         {
             Driver = new ChromeDriver();
             Driver.Manage().Window.Maximize();
-            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-            Driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
+            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
+            Driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(40);
         }
 
         [TearDown]

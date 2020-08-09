@@ -10,7 +10,7 @@ namespace MagnetoTesting
         private HomePage _homePage;
         private LogInPage _logInPage;
         private MyAccountPage _myAccountPage;
-        private AccountDashboardPage _dashboardPage;
+        //private AccountDashboardPage _dashboardPage;
 
         public Test2()
         {

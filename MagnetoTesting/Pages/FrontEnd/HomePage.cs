@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.PageObjects;
 using MagnetoTesting.Infrastructure;
+using System.Threading;
 
 namespace MagnetoTesting
 {
@@ -13,7 +14,7 @@ namespace MagnetoTesting
 
         public HomePage(IWebDriver driver) : base(driver)
         {
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            //wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
         }
 
         //Page elements
@@ -42,49 +43,43 @@ namespace MagnetoTesting
 
         private By elem_buttonLogIn = By.LinkText("Log In");
 
+        private By elem_buttonLogOut = By.LinkText("Log Out");
+
 
         //Compare Products
 
-        [FindsBy(How = How.XPath, Using = "//div[@class='block-title']//strong//span//small")]
-        private IWebElement elem_compareProductsCount;
+        private By elem_compareProductsCount = By.XPath("//div[@class='block-title']//strong//span//small");
 
         // Both filled and empty
-        [FindsBy(How = How.XPath, Using = "//ol[@id='compare-items']")]
-        private IWebElement elem_compareProductsList;
 
-        [FindsBy(How = How.XPath, Using = "//div[@class='actions']//a")]
-        private IWebElement elem_compareProductsCountClearList;
+        private By elem_compareProductsList = By.XPath("//ol[@id='compare-items']");
 
-        [FindsBy(How = How.XPath, Using = "//button[@class='button']//span//span[contains(text(),'Compare')]")]
-        private IWebElement elem_compareProductsCompare;
+        private By elem_compareProductsCountClearList = By.XPath("//div[@class='actions']//a");
+
+        private By elem_compareProductsCompare = By.XPath("//button[@class='button']//span//span[contains(text(),'Compare')]");
 
         // My Cart
 
-        [FindsBy(How = How.XPath, Using = "//p[@class='amount']//a")]
-        private IWebElement elem_myCartItemCount;
+        private By elem_myCartItemCount = By.XPath("//p[@class='amount']//a");
 
-        [FindsBy(How = How.XPath, Using = "//p[@class='subtotal']")]
-        private IWebElement elem_myCartSubtotal;
+        private By elem_myCartSubtotal = By.XPath("//p[@class='subtotal']");
 
-        [FindsBy(How = How.XPath, Using = "//p[@class='subtotal']//span[@class='price']")]
-        private IWebElement elem_myCartSubtotalAmount;
+        private By elem_myCartSubtotalAmount = By.XPath("//p[@class='subtotal']//span[@class='price']");
 
-        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Checkout')]")]
-        private IWebElement elem_myCartCheckoutButton;
+        private By elem_myCartCheckoutButton = By.XPath("//span[contains(text(),'Checkout')]");
 
-        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'Checkout')]")]
-        private IWebElement elem_myCartProductsList;
+        private By elem_myCartProductsList = By.XPath("//span[contains(text(),'Checkout')]");
 
         //Methods
-
-        public void pressHomeLogo()
-        {
-            Click(elem_logo);
-        }
 
         public void GoToHomepage()
         {
             Driver.Navigate().GoToUrl(homepageURL);
+        }
+
+        public void pressHomeLogo()
+        {
+            Click(elem_logo);
         }
 
         //Search bar Methods
@@ -125,6 +120,11 @@ namespace MagnetoTesting
         {
             Click(elem_buttonLogIn);
             
+        }
+
+        public void LogOut()
+        {
+            Click(elem_buttonLogOut);
         }
     }
 }

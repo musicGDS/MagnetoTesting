@@ -2,12 +2,12 @@
 using MagnetoTesting.Infrastructure;
 using OpenQA.Selenium;
 
-namespace MagnetoTesting.Pages.Admin
+namespace MagnetoTesting.Admin
 {
     public class AdminPage : PageBase
 
     {
-        private IWebDriver driver;
+        //private IWebDriver driver;
 
         public AdminPage(IWebDriver driver) : base(driver)
         {
@@ -56,6 +56,11 @@ namespace MagnetoTesting.Pages.Admin
         public void LogOut()
         {
             Click(elem_logOut);
+        }
+
+        public string GetInfoBar()
+        {
+            return Text(elem_infoBar);
         }
 
     }
