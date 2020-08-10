@@ -27,7 +27,7 @@ namespace MagnetoTesting
 
         private By elem_searchInput = By.XPath("//input[@id='search']");
 
-        private By elem_searchButton = By.XPath("//input[@id='search']");
+        private By elem_searchButton = By.XPath("//div[@class='form-search']//button[@class='button']");
 
         //User menu
 
