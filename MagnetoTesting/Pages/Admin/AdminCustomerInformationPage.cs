@@ -4,9 +4,9 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 namespace MagnetoTesting
 {
-    public class AdminCustomerInformation : PageBase
+    public class AdminCustomerInformationPage : PageBase
     {
-        public AdminCustomerInformation(IWebDriver driver) : base(driver)
+        public AdminCustomerInformationPage(IWebDriver driver) : base(driver)
         {
         }
 

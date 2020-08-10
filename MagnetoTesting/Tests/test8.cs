@@ -14,7 +14,7 @@ namespace MagnetoTesting.Tests
         private AdminLoginPage _adminLoginPage;
         private AdminPage _adminPage;
         private AdminOnlineCustomersPage _customersPage;
-        private AdminCustomerInformation _customerInfo;
+        private AdminCustomerInformationPage _customerInfo;
 
         public test8()
         {
@@ -23,7 +23,7 @@ namespace MagnetoTesting.Tests
             _adminLoginPage = new AdminLoginPage(Driver);
             _adminPage = new AdminPage(Driver);
             _customersPage = new AdminOnlineCustomersPage(Driver);
-            _customerInfo = new AdminCustomerInformation(Driver);
+            _customerInfo = new AdminCustomerInformationPage(Driver);
         }
 
         [Test]
@@ -49,8 +49,12 @@ namespace MagnetoTesting.Tests
             _adminPage.ClosePopup();
             _adminPage.HoverCustomers();
             _adminPage.GoToOnlineCustomersPage();
-            
+            _customersPage.ClickOnFirstListItem();
+
+
             Assert.That(_customerInfo.GetCustomersFullName, Contains.Substring(expectedUserName));
+
+            Driver.Quit();
 
         }
     }
