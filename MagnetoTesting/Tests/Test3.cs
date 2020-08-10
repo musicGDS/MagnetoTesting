@@ -16,6 +16,7 @@ namespace MagnetoTesting.Tests
             _adminPage = new AdminPage(Driver);
         }
 
+        //prisiloginimo dalį galima būtų iškelt į konstruktorių (arba setup metodą)
         [Test]
         public void test3_adminLogin()
         {

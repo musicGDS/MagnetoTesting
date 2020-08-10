@@ -14,6 +14,7 @@ namespace MagnetoTesting
         {
             //wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
         }
+        //vietoj komentarų ir "Elements" ar "Methods", gali naudot #region
 
         // Elements
 

@@ -19,6 +19,7 @@ namespace MagnetoTesting.Tests
             _myAccountPage = new MyAccountPage(Driver);
         }
 
+        //useremail, userpassword galima perkelt į appsettings.json, expectedPageTitle galima perkelt į page'ą ir jame assertint, čia būtų _myWishlist.AssertCorrectTitle(actualTitle);
         [Test]
         public void Test2_GoToMyWishlist()
         {

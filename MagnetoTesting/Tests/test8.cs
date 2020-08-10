@@ -28,7 +28,7 @@ namespace MagnetoTesting.Tests
 
         [Test]
         public void Test8_checkIfLoggedInAdminPannel()
-        {
+        { 
             string userEmail = "tester1@testing.com";
             string userPassword = "tester1testing";
 
@@ -41,6 +41,7 @@ namespace MagnetoTesting.Tests
             _homePage.GoToLogin();
             _logInPage.LogIn(userEmail, userPassword);
 
+            //šitus į page klasę reikia
             ((IJavaScriptExecutor)Driver).ExecuteScript("window.open();");
             Driver.SwitchTo().Window(Driver.WindowHandles.Last());
 

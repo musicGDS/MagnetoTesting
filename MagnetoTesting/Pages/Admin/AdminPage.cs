@@ -15,6 +15,7 @@ namespace MagnetoTesting
         }
 
         //Header
+        //ar tikrai toks xpath gali būt?
         private By elem_logo = By.XPath("private IWebDriver driver;");
 
         private By elem_globalSearch = By.XPath("//input[@id='global_search']");
@@ -26,7 +27,7 @@ namespace MagnetoTesting
         private By elem_closePopupButton = By.XPath("//div[contains(@class,'message-popup-head')]//a");
 
         //Menu
-
+        //yra daug nepanaudotų elementų, kam juos apsirašei?
         private By elem_menuDashboard = By.XPath("//body[@id='html-body']/div/div/div/ul[@id='nav']/li[1]/a[1]");
 
         private By elem_menuSales = By.XPath("//body[@id='html-body']/div/div/div/ul[@id='nav']/li[2]/a[1]");
@@ -38,7 +39,7 @@ namespace MagnetoTesting
         private By elem_menuCustomers = By.XPath("//body[@id='html-body']/div/div/div/ul[@id='nav']/li[5]/a[1]");
 
         //Customers Submenu
-
+        //gal būtų paprastesnis kelias iki jo?
         private By elem_onlineCustomers = By.XPath("//body[@id='html-body']/div[contains(@class,'wrapper')]/div[contains(@class,'header')]/div[contains(@class,'nav-bar')]/ul[@id='nav']/li[5]/ul[1]/li[3]/a[1]");
 
         private By elem_menuPromotions = By.XPath("//body[@id='html-body']/div/div/div/ul[@id='nav']/li[6]/a[1]");

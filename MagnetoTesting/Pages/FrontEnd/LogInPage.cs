@@ -16,7 +16,7 @@ namespace MagnetoTesting
         }
 
         // Elements
-
+        //čia ir kitur - galima tiesiog aprašyti "buttonCreateAccount", elem prefix'as atrodo perteklinis
         private By elem_buttonCreateAccount = By.XPath("//span[contains(text(),'Create an Account')]");
 
         private By elem_fieldEmail = By.Id("email");

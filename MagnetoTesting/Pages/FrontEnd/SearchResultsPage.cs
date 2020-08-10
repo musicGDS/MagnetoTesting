@@ -11,7 +11,7 @@ namespace MagnetoTesting
         }
 
         //Elements
-
+        //ar tikrai paprasčiau negalima? :) 
         private By elem_count = By.XPath("//body/div/div/div/div/div/div/div/div/div[1]/p[1]/strong[1]");
 
         private By elem_showPerPage = By.XPath("//body/div/div/div/div/div/div/div/div/div[1]/div[1]/select[1]");

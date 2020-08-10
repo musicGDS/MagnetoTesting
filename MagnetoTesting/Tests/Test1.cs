@@ -1,9 +1,10 @@
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using MagnetoTesting.Infrastructure;
 using System;
 
 namespace MagnetoTesting.Tests
 {
+    //Vietoj "Test1" galima įrašyt actual testo pavadinimą (galioja ir kitiems)
     // Test if User can log in
 
     public class Test1 : TestBase
@@ -43,7 +44,7 @@ namespace MagnetoTesting.Tests
 
 
             //Taippat bandziau is dashboard'o pasiimti welcome message "My Account" irgi tas pats
-
+            
             Assert.That(expectedPageTitle == actualTitle);
         }
     }

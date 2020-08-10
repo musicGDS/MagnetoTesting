@@ -30,6 +30,7 @@ namespace MagnetoTesting.Tests
             
             _homePage.GoToHomepage();
 
+            //pakeisti į wait
             Thread.Sleep(5000);
 
             _homePage.GoToLogin();

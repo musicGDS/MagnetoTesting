@@ -14,6 +14,7 @@ namespace MagnetoTesting
 
         private By elem_table = By.XPath("//table[@id='onlineGrid_table']//tbody");
 
+        //kodėl naudoji dvigubus /? 
         private By elem_firstListItem = By.XPath("//div[@class='grid']//tr[1]//td[1]");
 
         //Methods

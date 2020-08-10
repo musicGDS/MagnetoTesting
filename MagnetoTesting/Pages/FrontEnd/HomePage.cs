@@ -47,7 +47,7 @@ namespace MagnetoTesting
 
 
         //Compare Products
-
+        //visi šiti nėra panaudoti
         private By elem_compareProductsCount = By.XPath("//div[@class='block-title']//strong//span//small");
 
         // Both filled and empty
