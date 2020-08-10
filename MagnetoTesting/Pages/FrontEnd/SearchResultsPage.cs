@@ -25,5 +25,10 @@ namespace MagnetoTesting
         {
             return Driver.FindElements(By.LinkText(linkText)).Count != 0;
         }
+
+        public void AddToCartFirstProduct()
+        {
+            Click(elem_addToCart1);
+        }
     }
 }
