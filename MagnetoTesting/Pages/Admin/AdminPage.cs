@@ -1,8 +1,9 @@
 ﻿using System;
 using MagnetoTesting.Infrastructure;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 
-namespace MagnetoTesting.Admin
+namespace MagnetoTesting
 {
     public class AdminPage : PageBase
 
@@ -22,7 +23,7 @@ namespace MagnetoTesting.Admin
 
         private By elem_logOut = By.XPath("//a[@class='link-logout']");
 
-        private By elem_closePopupButton = By.XPath("//div[@class='message-popup-head']//a");
+        private By elem_closePopupButton = By.XPath("//div[contains(@class,'message-popup-head')]//a");
 
         //Menu
 
@@ -35,6 +36,10 @@ namespace MagnetoTesting.Admin
         private By elem_menuMobile = By.XPath("//body[@id='html-body']/div/div/div/ul[@id='nav']/li[4]/a[1]");
 
         private By elem_menuCustomers = By.XPath("//body[@id='html-body']/div/div/div/ul[@id='nav']/li[5]/a[1]");
+
+        //Customers Submenu
+
+        private By elem_onlineCustomers = By.XPath("//body[@id='html-body']/div[contains(@class,'wrapper')]/div[contains(@class,'header')]/div[contains(@class,'nav-bar')]/ul[@id='nav']/li[5]/ul[1]/li[3]/a[1]");
 
         private By elem_menuPromotions = By.XPath("//body[@id='html-body']/div/div/div/ul[@id='nav']/li[6]/a[1]");
 
@@ -68,6 +73,18 @@ namespace MagnetoTesting.Admin
         public void ClosePopup()
         {
             Click(elem_closePopupButton);
+        }
+
+        public void GoToOnlineCustomersPage()
+        {
+            Click(elem_onlineCustomers);
+        }
+
+        public void HoverCustomers()
+        {
+            Actions actions = new Actions(Driver);
+            actions.MoveToElement(Element(elem_menuCustomers)).Perform();
+
         }
 
     }

@@ -1,5 +1,5 @@
 ﻿using System;
-using MagnetoTesting.Admin;
+using MagnetoTesting;
 using MagnetoTesting.Infrastructure;
 using NUnit.Framework;
 
