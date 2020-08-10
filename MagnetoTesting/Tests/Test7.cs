@@ -15,10 +15,10 @@ namespace MagnetoTesting.Tests
             _searchResultsPage = new SearchResultsPage(Driver);
         }
 
-        [Test]
+        //[Test]
         public void Test7_addItemToCart()
         {
-            string searchInput = "lord of the rings";
+            string searchInput = "software testing";
 
             _homePage.GoToHomepage();
             _homePage.InputSearchText(searchInput);

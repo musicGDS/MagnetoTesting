@@ -4,7 +4,7 @@ using MagnetoTesting.Infrastructure;
 using NUnit.Framework;
 using OpenQA.Selenium;
 
-namespace MagnetoTesting
+namespace MagnetoTesting.Tests
 {
     public class Test4 : TestBase
     {

@@ -2,9 +2,9 @@
 using MagnetoTesting.Infrastructure;
 using NUnit.Framework;
 
-//NOT FINISHED CAPTCHA QUESTION
+//NOT FINISHED CAPTCHA 
 
-namespace MagnetoTesting
+namespace MagnetoTesting.Tests
 {
     public class Test5 : TestBase
     {

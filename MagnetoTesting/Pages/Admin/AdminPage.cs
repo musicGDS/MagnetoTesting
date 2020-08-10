@@ -18,9 +18,11 @@ namespace MagnetoTesting.Admin
 
         private By elem_globalSearch = By.XPath("//input[@id='global_search']");
 
-        private By elem_infoBar = By.XPath("//input[@id='global_search']");
+        private By elem_infoBar = By.XPath("//p[@class='super']");
 
         private By elem_logOut = By.XPath("//a[@class='link-logout']");
+
+        private By elem_closePopupButton = By.XPath("//div[@class='message-popup-head']//a");
 
         //Menu
 
@@ -61,6 +63,11 @@ namespace MagnetoTesting.Admin
         public string GetInfoBar()
         {
             return Text(elem_infoBar);
+        }
+
+        public void ClosePopup()
+        {
+            Click(elem_closePopupButton);
         }
 
     }

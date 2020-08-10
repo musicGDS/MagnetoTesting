@@ -3,7 +3,7 @@ using NUnit.Framework;
 using MagnetoTesting.Infrastructure;
 
 
-namespace MagnetoTesting
+namespace MagnetoTesting.Tests
 {
     public class Test2 : TestBase
     {
@@ -36,12 +36,9 @@ namespace MagnetoTesting
             _homePage.pressHomeLogo();
             _homePage.GoToMyWishlist();
 
+            //Sukursiu wishlist page, tada perkelsiu sita funkcija
             string actualTitle = Driver.Title;
 
-            //Pokol aiskinuosi kur padeti driver close
-            Driver.Close();
-
-            //Sukursiu wishlist page
             Assert.That(expectedPageTitle == actualTitle);
         }
     }

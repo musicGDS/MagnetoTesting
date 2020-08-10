@@ -3,7 +3,7 @@ using MagnetoTesting.Admin;
 using MagnetoTesting.Infrastructure;
 using NUnit.Framework;
 
-namespace MagnetoTesting
+namespace MagnetoTesting.Tests
 {
     public class Test3 : TestBase
     {
@@ -25,6 +25,8 @@ namespace MagnetoTesting
 
             _adminLoginPage.GoToAdminPage();
             _adminLoginPage.LogIn(userName, password);
+
+            _adminPage.ClosePopup();
 
             string actualResult = _adminPage.GetInfoBar();
 

@@ -2,7 +2,7 @@ using NUnit.Framework;
 using MagnetoTesting.Infrastructure;
 using System;
 
-namespace MagnetoTesting
+namespace MagnetoTesting.Tests
 {
     // Test if User can log in
 
