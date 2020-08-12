@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading;
 using MagnetoTesting.Infrastructure;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -29,9 +28,6 @@ namespace MagnetoTesting.Tests
             string userPassword = "tester1testing";
             
             _homePage.GoToHomepage();
-
-            //pakeisti į wait
-            Thread.Sleep(5000);
 
             _homePage.GoToLogin();
             _logInPage.LogIn(userEmail, userPassword);

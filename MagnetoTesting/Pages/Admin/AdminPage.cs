@@ -15,8 +15,8 @@ namespace MagnetoTesting
         }
 
         //Header
-        //ar tikrai toks xpath gali būt?
-        private By elem_logo = By.XPath("private IWebDriver driver;");
+        
+        private By elem_logo = By.XPath("//img[@class='logo']");
 
         private By elem_globalSearch = By.XPath("//input[@id='global_search']");
 

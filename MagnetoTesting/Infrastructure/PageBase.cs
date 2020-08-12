@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using System.Linq;
+using OpenQA.Selenium;
 
 
 namespace MagnetoTesting.Infrastructure
@@ -30,6 +31,13 @@ namespace MagnetoTesting.Infrastructure
         public string Text(By by)
         {
             return Element(by).Text;
+        }
+
+        public void OpenNewTab()
+        {
+            //šitus į page klasę reikia
+            ((IJavaScriptExecutor)Driver).ExecuteScript("window.open();");
+            Driver.SwitchTo().Window(Driver.WindowHandles.Last());
         }
     }
 }

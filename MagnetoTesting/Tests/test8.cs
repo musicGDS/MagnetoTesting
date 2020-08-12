@@ -41,9 +41,7 @@ namespace MagnetoTesting.Tests
             _homePage.GoToLogin();
             _logInPage.LogIn(userEmail, userPassword);
 
-            //šitus į page klasę reikia
-            ((IJavaScriptExecutor)Driver).ExecuteScript("window.open();");
-            Driver.SwitchTo().Window(Driver.WindowHandles.Last());
+            
 
             _adminLoginPage.GoToAdminPage();
             _adminLoginPage.LogIn(adminName, adminPassword);

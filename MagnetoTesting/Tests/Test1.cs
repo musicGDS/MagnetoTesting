@@ -35,16 +35,7 @@ namespace MagnetoTesting.Tests
             _logInPage.InputPassword(userPassword);
             _logInPage.ClickLogIn();
 
-            //string actualTitle = Driver.Title;
-
-            string actualTitle = _myAccountPage.GetPageTitle();
-
-            //Pokol aiskinuosi kur padeti driver close
-            //Driver.Close();
-
-
-            //Taippat bandziau is dashboard'o pasiimti welcome message "My Account" irgi tas pats
-            
+            string actualTitle = _myAccountPage.GetPageTitle();            
             Assert.That(expectedPageTitle == actualTitle);
         }
     }

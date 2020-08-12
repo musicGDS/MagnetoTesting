@@ -10,7 +10,7 @@ namespace MagnetoTesting
     {
         //perkelk url į appsettings.json, ar tikrai reikia tos 'key' dalies?
         private string adminPanelURL =
-            "http://dovydenas.lt/sandboxthree/index.php/admin/index/index/key/88bbdb6c542e5ea72f83e22c8f726c00/";
+            "http://dovydenas.lt/sandboxthree/admin";
         private IWebDriver driver;
         private WebDriverWait wait;
 
