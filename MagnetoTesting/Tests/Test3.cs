@@ -35,7 +35,6 @@ namespace MagnetoTesting.Tests
             string actualResult = _adminPage.GetInfoBar();
   
             Assert.That(actualResult, Contains.Substring(expectedResult));
-
         }
     }
 }

@@ -35,7 +35,5 @@ namespace MagnetoTesting.Tests
 
             Assert.That(Driver.FindElements(By.LinkText("Log In")).Count != 0);
         }
-
-
     }
 }
