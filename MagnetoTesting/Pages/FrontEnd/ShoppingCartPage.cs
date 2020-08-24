@@ -10,8 +10,6 @@ namespace MagnetoTesting
         {
         }
 
-        //Elements
-
         //Methods
 
         public string GetPageTitle()

@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagnetoTesting", "MagnetoTesting\MagnetoTesting.csproj", "{3F8F4A4D-257F-430D-B5EB-DBC98C408D3A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagentoTesting", "MagnetoTesting\MagentoTesting.csproj", "{3F8F4A4D-257F-430D-B5EB-DBC98C408D3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using MagnetoTesting.Infrastructure;
-using System;
 
 namespace MagnetoTesting.Tests
 {
@@ -24,17 +23,14 @@ namespace MagnetoTesting.Tests
         [Test]
         public void Test1_LogIn()
         {
-            string userEmail = "tester1@testing.com";
-            string userPassword = "tester1testing";
+            string userEmail = ConfigurationReader.GetValue("User1", "Username");
+            string userPassword = ConfigurationReader.GetValue("User1", "Password");
             string expectedPageTitle = "My Account";
             
             _homePage.GoToHomepage();
             _homePage.GoToLogin();
-
-            _logInPage.InputEmail(userEmail);
-            _logInPage.InputPassword(userPassword);
-            _logInPage.ClickLogIn();
-
+            _logInPage.LogIn(userEmail, userPassword);
+            
             string actualTitle = _myAccountPage.GetPageTitle();            
             Assert.That(expectedPageTitle == actualTitle);
         }

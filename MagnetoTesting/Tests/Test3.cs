@@ -1,7 +1,7 @@
-﻿using System;
-using MagnetoTesting;
-using MagnetoTesting.Infrastructure;
+﻿using MagnetoTesting.Infrastructure;
 using NUnit.Framework;
+using Microsoft.Extensions.Configuration;
+
 
 namespace MagnetoTesting.Tests
 {
@@ -12,16 +12,19 @@ namespace MagnetoTesting.Tests
 
         public Test3()
         {
+            //Configuration = configuration;
             _adminLoginPage = new AdminLoginPage(Driver);
             _adminPage = new AdminPage(Driver);
         }
+
 
         //prisiloginimo dalį galima būtų iškelt į konstruktorių (arba setup metodą)
         [Test]
         public void test3_adminLogin()
         {
-            string userName = "SandboxAdmin";
-            string password = "CdXttuZqTFsbZFQ";
+
+            string userName = ConfigurationReader.GetValue("Admin", "Username");
+            string password = ConfigurationReader.GetValue("Admin", "Password");
             string expectedResult = "Logged in as SandboxAdmin";
 
             _adminLoginPage.GoToAdminPage();
@@ -30,7 +33,7 @@ namespace MagnetoTesting.Tests
             _adminPage.ClosePopup();
 
             string actualResult = _adminPage.GetInfoBar();
-
+  
             Assert.That(actualResult, Contains.Substring(expectedResult));
 
         }

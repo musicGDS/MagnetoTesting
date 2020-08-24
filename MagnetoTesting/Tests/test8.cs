@@ -1,8 +1,5 @@
-﻿using System;
-using System.Linq;
-using MagnetoTesting.Infrastructure;
+﻿using MagnetoTesting.Infrastructure;
 using NUnit.Framework;
-using OpenQA.Selenium;
 
 namespace MagnetoTesting.Tests
 {
@@ -29,18 +26,18 @@ namespace MagnetoTesting.Tests
         [Test]
         public void Test8_checkIfLoggedInAdminPannel()
         { 
-            string userEmail = "tester1@testing.com";
-            string userPassword = "tester1testing";
+            string userEmail = ConfigurationReader.GetValue("User1", "Username");
+            string userPassword = ConfigurationReader.GetValue("User1", "Password");
 
-            string adminName = "SandboxAdmin";
-            string adminPassword = "CdXttuZqTFsbZFQ";
+            string adminName = ConfigurationReader.GetValue("Admin", "Username");
+            string adminPassword = ConfigurationReader.GetValue("Admin", "Password");
 
             string expectedUserName = "Tester1 Testing";
 
             _homePage.GoToHomepage();
             _homePage.GoToLogin();
             _logInPage.LogIn(userEmail, userPassword);
-
+            _logInPage.OpenNewTab();
             
 
             _adminLoginPage.GoToAdminPage();
@@ -50,12 +47,7 @@ namespace MagnetoTesting.Tests
             _adminPage.GoToOnlineCustomersPage();
             _customersPage.ClickOnFirstListItem();
 
-
             Assert.That(_customerInfo.GetCustomersFullName, Contains.Substring(expectedUserName));
-
-            Driver.Quit();
-
         }
-    }
-        
+    }       
 }

@@ -1,7 +1,6 @@
-﻿using System;
-using MagnetoTesting.Infrastructure;
+﻿using MagnetoTesting.Infrastructure;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+
 
 namespace MagnetoTesting
 {
@@ -24,8 +23,6 @@ namespace MagnetoTesting
         private By elem_confirmPasswordInput = By.Id("confirmation");
 
         private By elem_captchaInput = By.Id("captcha_user_create");
-
-        private By elem_captchaImage = By.Id("user_create");
 
         private By elem_backButton = By.XPath("//a[@class='back-link']");
 

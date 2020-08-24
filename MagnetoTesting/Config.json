@@ -1,0 +1,21 @@
+﻿{
+  "AdminUsername": "SandboxAdmin",
+  "AdminPassword": "CdXttuZqTFsbZFQ",
+  "URLS": {
+    "MainUrl": "http://dovydenas.lt/sandboxthree/",
+    "AdminUrl": "http://dovydenas.lt/sandboxthree/admin"
+  },
+  "Users": {
+    "Admin": {
+
+    },
+    "User1": {
+      "Username": "SandboxAdmin",
+      "Password": "CdXttuZqTFsbZFQ"
+    },
+    "User2": {
+      "Username": "SandboxAdmin",
+      "Password": "CdXttuZqTFsbZFQ"
+    }
+  }
+}

@@ -2,15 +2,14 @@
 using MagnetoTesting.Infrastructure;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using Microsoft.Extensions.Configuration;
 
 namespace MagnetoTesting
 {
     public class AdminLoginPage : PageBase
 
     {
-        //perkelk url į appsettings.json, ar tikrai reikia tos 'key' dalies?
-        private string adminPanelURL =
-            "http://dovydenas.lt/sandboxthree/admin";
+        private string adminPanelURL = ConfigurationReader.GetValue("URL", "AdminUrl");
         private IWebDriver driver;
         private WebDriverWait wait;
 

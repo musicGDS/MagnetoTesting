@@ -1,20 +1,16 @@
-﻿using System;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using SeleniumExtras.PageObjects;
 using MagnetoTesting.Infrastructure;
-using System.Threading;
 
 namespace MagnetoTesting
 {
     public class HomePage : PageBase
     {
-        private string homepageURL = "http://dovydenas.lt/sandboxthree/";
+        private string homepageURL = ConfigurationReader.GetValue("URL", "MainUrl");
         private WebDriverWait wait;
 
         public HomePage(IWebDriver driver) : base(driver)
         {
-            //wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
         }
 
         //Page elements
@@ -37,38 +33,9 @@ namespace MagnetoTesting
 
         private By elem_buttonMyWishlist = By.LinkText("My Wishlist");
 
-        private By elem_buttonMyCart = By.XPath("//a[@class='top-link-cart']");
-
-        private By elem_buttonCheckout = By.XPath("Checkout");
-
         private By elem_buttonLogIn = By.LinkText("Log In");
 
         private By elem_buttonLogOut = By.LinkText("Log Out");
-
-
-        //Compare Products
-        //visi šiti nėra panaudoti
-        private By elem_compareProductsCount = By.XPath("//div[@class='block-title']//strong//span//small");
-
-        // Both filled and empty
-
-        private By elem_compareProductsList = By.XPath("//ol[@id='compare-items']");
-
-        private By elem_compareProductsCountClearList = By.XPath("//div[@class='actions']//a");
-
-        private By elem_compareProductsCompare = By.XPath("//button[@class='button']//span//span[contains(text(),'Compare')]");
-
-        // My Cart
-
-        private By elem_myCartItemCount = By.XPath("//p[@class='amount']//a");
-
-        private By elem_myCartSubtotal = By.XPath("//p[@class='subtotal']");
-
-        private By elem_myCartSubtotalAmount = By.XPath("//p[@class='subtotal']//span[@class='price']");
-
-        private By elem_myCartCheckoutButton = By.XPath("//span[contains(text(),'Checkout')]");
-
-        private By elem_myCartProductsList = By.XPath("//span[contains(text(),'Checkout')]");
 
         //Methods
 

@@ -1,15 +1,10 @@
-﻿using System;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
+﻿using OpenQA.Selenium;
 using MagnetoTesting.Infrastructure;
 
 namespace MagnetoTesting
 {
     public class LogInPage : PageBase
     {
-        private IWebDriver driver;
-        private WebDriverWait wait;
-
         public LogInPage(IWebDriver driver) : base(driver)
         {
             //wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));

@@ -1,17 +1,22 @@
 ﻿using System.Linq;
+using Microsoft.Extensions.Configuration;
 using OpenQA.Selenium;
+
 
 
 namespace MagnetoTesting.Infrastructure
 {
     public class PageBase
     {
+     
+
         public IWebDriver Driver;
 
         public PageBase(IWebDriver driver)
         {
-            Driver = driver;
+            Driver = driver; 
         }
+
 
         public IWebElement Element(By by)
         {
@@ -35,7 +40,6 @@ namespace MagnetoTesting.Infrastructure
 
         public void OpenNewTab()
         {
-            //šitus į page klasę reikia
             ((IJavaScriptExecutor)Driver).ExecuteScript("window.open();");
             Driver.SwitchTo().Window(Driver.WindowHandles.Last());
         }

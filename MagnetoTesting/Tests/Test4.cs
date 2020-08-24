@@ -24,8 +24,8 @@ namespace MagnetoTesting.Tests
 
         public void test4_userLogOut()
         {
-            string userEmail = "tester1@testing.com";
-            string userPassword = "tester1testing";
+            string userEmail = ConfigurationReader.GetValue("User1", "Username");
+            string userPassword = ConfigurationReader.GetValue("User1", "Password");
             
             _homePage.GoToHomepage();
 

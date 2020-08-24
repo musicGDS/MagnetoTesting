@@ -1,7 +1,10 @@
 ﻿using System;
+using Microsoft.Extensions.Configuration;
+//using Microsoft.Extensions.Configuration;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+
 
 namespace MagnetoTesting.Infrastructure
 {
@@ -20,7 +23,7 @@ namespace MagnetoTesting.Infrastructure
         [TearDown]
         public void _TearDown()
         {
-            Driver.Close();
+            Driver.Quit();
         }
     }
 }
